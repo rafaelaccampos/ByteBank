@@ -3,11 +3,23 @@
     <h2 class="formulario_titulo">Nova transferência</h2>
     <div class="form-field">
       <label class="form-field_label" for="valor">Valor</label>
-      <input class="form-field_input" id="valor" type="text" />
+      <input
+      class="form-field_input"
+      id="valor"
+      type="text"
+      name="valor"
+      [(ngModel)]="value"
+      />
     </div>
     <div class="form-field">
       <label class="form-field_label" for="destino">Destino</label>
-      <input class="form-field_input" id="destino" type="text" />
+      <input
+      class="form-field_input"
+      id="destino"
+      type="text"
+      name="destino"
+      [(ngModel)]="destiny"
+      />
     </div>
     <div class="botao-wrapper">
       <button class="botao">Transferir</button>
