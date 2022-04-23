@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-new-transference',
   templateUrl: './new-transference.component.html',
-  styleUrls: ['./new-transference.component.css']
+  styleUrls: ['./new-transference.component.scss']
 })
 export class NewTransferenceComponent implements OnInit {
 
@@ -12,4 +12,7 @@ export class NewTransferenceComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  transferir(){
+    console.log('Solicitada nova transferência');
+  }
 }
