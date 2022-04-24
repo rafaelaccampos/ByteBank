@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Transference } from '../models/transference';
 import { TransferencesService } from '../services/transferences.service';
 @Component({
@@ -15,7 +16,7 @@ export class NewTransferenceComponent {
   destiny!: string;
   date!: string;
 
-  constructor(private service: TransferencesService){
+  constructor(private service: TransferencesService, private routerLink: Router){
 
   }
 
@@ -31,6 +32,7 @@ export class NewTransferenceComponent {
     });
 
     this.clearFields();
+    this.routerLink.navigateByUrl("extrato");
   }
 
   clearFields(){
