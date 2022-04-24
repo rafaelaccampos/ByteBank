@@ -11,7 +11,6 @@ export class AppComponent {
   transference! : Transference;
 
   transfer($event: Transference){
-    console.log($event);
     this.transference = $event;
   }
 }

@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewTransferenceComponent } from './new-transference/new-transference.component';
+import { ExtractComponent } from './extract/extract.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewTransferenceComponent
+    NewTransferenceComponent,
+    ExtractComponent
   ],
   imports: [
     BrowserModule,
