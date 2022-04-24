@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Transference } from '../transference';
+import { Transference } from '../models/transference';
 @Component({
   selector: 'app-new-transference',
   templateUrl: './new-transference.component.html',
@@ -9,12 +9,14 @@ import { Transference } from '../transference';
 export class NewTransferenceComponent {
   @Output() toTransfer = new EventEmitter<Transference>();
 
+  id!: number;
   value!: number;
-  destiny!: number;
-  date!: Date;
+  destiny!: string;
+  date!: string;
 
   transfer(){
     this.toTransfer.emit({
+      id: this.id,
       value: this.value,
       destiny: this.destiny,
       date: this.date,
@@ -24,6 +26,6 @@ export class NewTransferenceComponent {
 
   clearFields(){
     this.value = 0;
-    this.destiny = 0;
+    this.destiny = '';
   }
 }

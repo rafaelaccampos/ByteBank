@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Transference } from '../transference';
+import { Transference } from '../models/transference';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +23,6 @@ export class TransferencesService {
 
   fillTransference(transference: Transference)
   {
-    transference.date = new Date();
+    transference.date = new Date().toString();
   }
 }
