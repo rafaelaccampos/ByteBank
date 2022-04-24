@@ -1,12 +1,12 @@
 <section class="container">
-  <form class="formulario" (ngSubmit)="transferir()">
+  <form class="formulario" (ngSubmit)="transfer()">
     <h2 class="formulario_titulo">Nova transferência</h2>
     <div class="form-field">
       <label class="form-field_label" for="valor">Valor</label>
       <input
       class="form-field_input"
       id="valor"
-      type="text"
+      type="number"
       name="valor"
       [(ngModel)]="value"
       />

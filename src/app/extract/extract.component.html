@@ -1,5 +1,17 @@
-<div *ngFor="let transference of transferences">
-  <p>Valor: {{ transference?.value }}</p>
-  <p>Destino: {{ transference?.destiny }}</p>
-  <p>Data: {{ transference?.date }}</p>
-</div>
+<table class="tabela">
+  <thead class="tabela__cabecalho">
+    <th class="tabela__cabecalho__conteudo">Valor</th>
+    <th class="tabela__cabecalho__conteudo">Destino</th>
+    <th class="tabela__cabecalho__conteudo">Data</th>
+  </thead>
+  <tbody *ngIf="transferences.length > 0; else emptyList">
+    <tr class="tabela__linha" *ngFor="let transference of transferences">
+      <td class="tabela__conteudo">{{ transference?.value | currency }} </td>
+      <td class="tabela__conteudo">{{ transference?.destiny }}</td>
+      <td class="tabela__conteudo">{{ transference?.date | date: "short" }} </td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #emptyList>
+  <p>Nenhuma operação cadastrada.</p>
+</ng-template>

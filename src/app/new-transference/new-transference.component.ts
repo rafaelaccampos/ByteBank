@@ -13,10 +13,7 @@ export class NewTransferenceComponent {
   destiny!: number;
   date!: Date;
 
-  transferir(){
-    console.log('Solicitada nova transferência');
-    console.log('Valor:', this.value);
-    console.log('Destino:', this.destiny);
+  transfer(){
     this.toTransfer.emit({
       value: this.value,
       destiny: this.destiny,

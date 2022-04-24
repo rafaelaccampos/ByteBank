@@ -4,7 +4,7 @@ import { Transference } from '../transference';
 @Component({
   selector: 'app-extract',
   templateUrl: './extract.component.html',
-  styleUrls: ['./extract.component.css']
+  styleUrls: ['./extract.component.scss']
 })
 export class ExtractComponent implements OnInit {
   @Input() transferences!: Transference[];
