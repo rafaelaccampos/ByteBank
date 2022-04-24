@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Transference } from '../models/transference';
+import { TransferencesService } from '../services/transferences.service';
 @Component({
   selector: 'app-new-transference',
   templateUrl: './new-transference.component.html',
@@ -14,13 +15,21 @@ export class NewTransferenceComponent {
   destiny!: string;
   date!: string;
 
+  constructor(private service: TransferencesService){
+
+  }
+
   transfer(){
-    this.toTransfer.emit({
-      id: this.id,
+    const transferForEmit = {
       value: this.value,
       destiny: this.destiny,
-      date: this.date,
-    });
+    };
+
+    this.service.add(transferForEmit).subscribe(transference => {
+      console.log(transference);
+    },
+    error => console.error(error));
+
     this.clearFields();
   }
 

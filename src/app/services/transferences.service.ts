@@ -21,9 +21,10 @@ export class TransferencesService {
     return this.httpClient.get<Transference[]>(this.url)
   }
 
-  add($event: Transference){
+  add($event: Transference) : Observable<Transference>{
     this.fillTransference($event);
-    this.transferences.push($event);
+
+    return this.httpClient.post<Transference>(this.url, $event);
   }
 
   fillTransference(transference: Transference)

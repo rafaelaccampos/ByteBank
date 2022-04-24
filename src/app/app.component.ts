@@ -9,10 +9,4 @@ import { Transference } from './models/transference';
 })
 export class AppComponent {
   title = 'ByteBank';
-
-  constructor(private service: TransferencesService){}
-
-  transfer($event: Transference){
-    this.service.add($event);
-  }
 }
