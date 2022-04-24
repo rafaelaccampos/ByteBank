@@ -18,6 +18,12 @@ export class NewTransferenceComponent {
     this.toTransfer.emit({
       value: this.value,
       destiny: this.destiny
-    })
+    });
+    this.clearFields();
+  }
+
+  clearFields(){
+    this.value = 0;
+    this.destiny = 0;
   }
 }

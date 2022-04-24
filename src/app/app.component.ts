@@ -8,8 +8,10 @@ import { Transference } from './transference';
 })
 export class AppComponent {
   title = 'ByteBank';
+  transference! : Transference;
 
   transfer($event: Transference){
     console.log($event);
+    this.transference = $event;
   }
 }
