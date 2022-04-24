@@ -8,6 +8,7 @@ import { NewTransferenceComponent } from './new-transference/new-transference.co
 import { ExtractComponent } from './extract/extract.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localePt, 'pt');
 @NgModule({
@@ -19,7 +20,8 @@ registerLocaleData(localePt, 'pt');
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     {

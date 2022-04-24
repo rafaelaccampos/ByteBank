@@ -1,6 +1,6 @@
 export interface Transference {
-  id: number | string;
+  id?: number | string;
   value: number;
   destiny: string;
-  date: string;
+  date?: string;
 }

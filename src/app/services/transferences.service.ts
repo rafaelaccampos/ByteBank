@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Transference } from '../models/transference';
-
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class TransferencesService {
   private listOfTransferences: Transference[] = [];
+  private url = 'http://localhost:3000/transferences';
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
   get transferences()
@@ -15,9 +17,12 @@ export class TransferencesService {
     return this.listOfTransferences;
   }
 
+  getAll() : Observable<Transference[]>{
+    return this.httpClient.get<Transference[]>(this.url)
+  }
+
   add($event: Transference){
     this.fillTransference($event);
-    //const transference = {...$event, data: new Date()};
     this.transferences.push($event);
   }
 
