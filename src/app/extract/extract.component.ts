@@ -7,7 +7,7 @@ import { Transference } from '../transference';
   styleUrls: ['./extract.component.css']
 })
 export class ExtractComponent implements OnInit {
-  @Input() transference!: Transference;
+  @Input() transferences!: Transference[];
 
   constructor() { }
 

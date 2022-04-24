@@ -8,8 +8,10 @@ import { Transference } from '../transference';
 
 export class NewTransferenceComponent {
   @Output() toTransfer = new EventEmitter<Transference>();
+
   value!: number;
   destiny!: number;
+  date!: Date;
 
   transferir(){
     console.log('Solicitada nova transferência');
@@ -17,7 +19,8 @@ export class NewTransferenceComponent {
     console.log('Destino:', this.destiny);
     this.toTransfer.emit({
       value: this.value,
-      destiny: this.destiny
+      destiny: this.destiny,
+      date: this.date,
     });
     this.clearFields();
   }

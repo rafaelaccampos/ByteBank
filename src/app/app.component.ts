@@ -8,9 +8,11 @@ import { Transference } from './transference';
 })
 export class AppComponent {
   title = 'ByteBank';
-  transference! : Transference;
+  transferences : Transference[]  = [];
 
   transfer($event: Transference){
-    this.transference = $event;
+    console.log($event);
+    const transference = {...$event, date: new Date()};
+    this.transferences.push(transference);
   }
 }
