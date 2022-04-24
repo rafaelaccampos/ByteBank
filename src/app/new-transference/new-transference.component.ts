@@ -1,21 +1,23 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Transference } from '../transference';
 @Component({
   selector: 'app-new-transference',
   templateUrl: './new-transference.component.html',
   styleUrls: ['./new-transference.component.scss']
 })
 
-@Injectable({
-  providedIn: 'root',
-})
-
 export class NewTransferenceComponent {
-  value!: Number;
-  destiny!: Number;
+  @Output() toTransfer = new EventEmitter<Transference>();
+  value!: number;
+  destiny!: number;
 
   transferir(){
     console.log('Solicitada nova transferência');
     console.log('Valor:', this.value);
     console.log('Destino:', this.destiny);
+    this.toTransfer.emit({
+      value: this.value,
+      destiny: this.destiny
+    })
   }
 }
