@@ -18,7 +18,7 @@ export class TransferencesService {
   }
 
   getAll() : Observable<Transference[]>{
-    return this.httpClient.get<Transference[]>(this.url)
+    return this.httpClient.get<Transference[]>(this.url);
   }
 
   add($event: Transference) : Observable<Transference>{

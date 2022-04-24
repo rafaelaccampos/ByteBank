@@ -25,10 +25,10 @@ export class NewTransferenceComponent {
       destiny: this.destiny,
     };
 
-    this.service.add(transferForEmit).subscribe(transference => {
-      console.log(transference);
-    },
-    error => console.error(error));
+    this.service.add(transferForEmit).subscribe({
+      next: (t) => console.log(transferForEmit),
+      error: (e) => console.error(e),
+    });
 
     this.clearFields();
   }
